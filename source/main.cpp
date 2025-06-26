@@ -8,7 +8,7 @@ int main(int argc, char **argv) {
         std::cout << "Please pass the PPM image as argument." << std::endl;
         return 1;
     } else {
-        std::string density = "#N@%W$9876543210X&?ABC/()!;:^*+=~-_,.";
+        std::string density = "#./\?*-+~^";
         std::ifstream image;
         image.open(argv[1]);
         std::string type = "", width = "", height = "", RGB = "";
@@ -24,7 +24,8 @@ int main(int argc, char **argv) {
         } else {
             std::string red = "", green = "", blue = "";
             int r = 0, g = 0, b = 0;
-            int avg = 0, index = 0, newLine = 0;
+            int avg = 0, newLine = 0;
+            long unsigned int index = 0;
             while(!image.eof()) {
                 image >> red >> green >> blue;
                 std::stringstream redstream(red);
